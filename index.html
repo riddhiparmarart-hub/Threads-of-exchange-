@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREADS OF EXCHANGE | CSMVS × The British Museum</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Tactile Overlays -->
+    <div class="noise-overlay"></div>
+    <div class="weave-overlay"></div>
+
+    <!-- Top Institutional Bar -->
+    <div class="institutional-bar">
+        <span>CSMVS × THE BRITISH MUSEUM</span>
+        <span class="bar-separator">|</span>
+        <span>Academic Project | Communication Design</span>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="#" class="logo">THREADS OF EXCHANGE</a>
+            <ul class="nav-links">
+                <li><a href="javascript:void(0)" class="nav-item active" data-tab="0">About</a></li>
+                <li><a href="javascript:void(0)" class="nav-item" data-tab="1">Room 01</a></li>
+                <li><a href="javascript:void(0)" class="nav-item" data-tab="2">Room 02</a></li>
+                <li><a href="javascript:void(0)" class="nav-item" data-tab="3">Studio</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-primary" onclick="document.querySelector('.tab-btn[data-tab=\'1\']').click()">View Gallery</button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav-menu" id="mobileNavMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="javascript:void(0)" class="mobile-nav-item active" data-tab="0"><span>I.</span> About</a></li>
+                <li><a href="javascript:void(0)" class="mobile-nav-item" data-tab="1"><span>II.</span> Room 01</a></li>
+                <li><a href="javascript:void(0)" class="mobile-nav-item" data-tab="2"><span>III.</span> Room 02</a></li>
+                <li><a href="javascript:void(0)" class="mobile-nav-item" data-tab="3"><span>IV.</span> Studio</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Editorial Hero Section -->
+        <section class="hero-section">
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 01 -->
+                    <div class="swiper-slide hero-slide">
+                        <img src="images/model-red-room-wide.jpg" alt="Your miniature textile manufacturing room">
+                        <div class="hero-caption">
+                            <span class="placard">FIG. 01</span>
+                            <h3>The Intricacy of Madder</h3>
+                        </div>
+                    </div>
+                    <!-- Slide 02 -->
+                    <div class="swiper-slide hero-slide">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chintz%20(India)%2C%2018th%20century%20(CH%2018481811).jpg" alt="18th-century Indian chintz textile, Cooper Hewitt collection">
+                        <div class="hero-caption">
+                            <span class="placard">FIG. 02</span>
+                            <h3>Archival Foundations</h3>
+                        </div>
+                    </div>
+                    <!-- Slide 03 -->
+                    <div class="swiper-slide hero-slide">
+                        <img src="images/model-grey-room-wide.jpg" alt="Your miniature trade exhibition room">
+                        <div class="hero-caption">
+                            <span class="placard">FIG. 03</span>
+                            <h3>The Rhythm of the Loom</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">THREADS <br> OF EXCHANGE</h1>
+                    <p class="hero-tagline">The journey of Indian textiles across time, craft and commerce.</p>
+                </div>
+                <div class="swiper-pagination hero-pagination"></div>
+            </div>
+
+            <!-- SVG Weave Overlays -->
+            <svg class="weave-svg-top" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,50 Q25,45 50,50 T100,50" stroke="#BC0202" fill="transparent" stroke-width="0.5"/>
+                <path d="M0,60 Q25,55 50,60 T100,60" stroke="#000000" fill="transparent" stroke-width="0.3"/>
+            </svg>
+        </section>
+
+        <!-- Main Exhibition Explorer -->
+        <section class="exhibition-explorer">
+            <!-- Sticky Tab Bar -->
+            <div class="tab-navbar">
+                <div class="tab-indicator"></div>
+                <button class="tab-btn active" data-tab="0"><span>I.</span> ABOUT</button>
+                <button class="tab-btn" data-tab="1"><span>II.</span> ROOM 01</button>
+                <button class="tab-btn" data-tab="2"><span>III.</span> ROOM 02</button>
+                <button class="tab-btn" data-tab="3"><span>IV.</span> STUDIO</button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="tab-viewport">
+
+                <!-- TAB 1: ABOUT -->
+                <div class="tab-content active" id="tab-0">
+                    <div class="container narrow">
+                        <span class="section-label">CURATORIAL OVERVIEW</span>
+                        <h2 class="editorial-heading">About the Exhibit</h2>
+                        <p class="lead-text">A collaborative exhibition by the Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (CSMVS), Mumbai, and the British Museum.</p>
+                        <div class="story-text">
+                            <p>Indian textiles were celebrated for their craftsmanship, intricate patterns, materials and techniques. But behind every finished textile was an extensive process involving skilled artisans, specialised tools, raw materials and trade networks.</p>
+                            <p>This exhibition explores two interconnected stages of India's textile heritage: the art of textile manufacturing and the trade that carried textiles and spices across regions and continents.</p>
+                        </div>
+                    </div>
+
+                    <!-- Exhibition Highlights Carousel -->
+                    <div class="highlights-wrapper">
+                        <div class="swiper highlights-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide highlight-card">
+                                    <img src="images/model-red-textile-wall.jpg" alt="Textile displays in your red manufacturing room">
+                                    <div class="card-info"><span>HIGHLIGHT 01</span><h4>Installation Views</h4></div>
+                                </div>
+                                <div class="swiper-slide highlight-card">
+                                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chintz%20(India)%2C%2018th%20century%20(CH%2018481811).jpg" alt="18th-century Indian chintz textile">
+                                    <div class="card-info"><span>HIGHLIGHT 02</span><h4>Craftsmanship</h4></div>
+                                </div>
+                                <div class="swiper-slide highlight-card">
+                                    <img src="images/model-grey-wall-display.jpg" alt="Historical object displays in your grey trade room">
+                                    <div class="card-info"><span>HIGHLIGHT 03</span><h4>Curatorial Research</h4></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pillars-grid container">
+                        <div class="pillar-card" onclick="document.querySelector('[data-tab=\'1\']').click()">
+                            <span class="pillar-num">01</span>
+                            <h3>The Art of Making</h3>
+                            <p>Explore traditional techniques and tools.</p>
+                            <span class="pillar-link">Enter Room 01 &rarr;</span>
+                        </div>
+                        <div class="pillar-card" onclick="document.querySelector('[data-tab=\'2\']').click()">
+                            <span class="pillar-num">02</span>
+                            <h3>The Routes of Trade</h3>
+                            <p>Discover the commercial journey across oceans.</p>
+                            <span class="pillar-link">Enter Room 02 &rarr;</span>
+                        </div>
+                        <div class="pillar-card" onclick="document.querySelector('[data-tab=\'3\']').click()">
+                            <span class="pillar-num">03</span>
+                            <h3>Take Home a Tradition</h3>
+                            <p>Stamp your own story on the digital loom.</p>
+                            <span class="pillar-link">Go to Studio &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: ROOM 01 -->
+                <div class="tab-content" id="tab-1">
+                    <div class="container narrow">
+                        <span class="section-label">ROOM 01</span>
+                        <h2 class="editorial-heading">The Art of Making</h2>
+                        <p class="curatorial-wall-text">
+                            Before a textile became a treasured commodity, it began with the hands of an artisan. From preparing fibres and spinning yarn to weaving, dyeing and printing, every stage required specialised knowledge and skill. This room explores the traditional techniques and tools that shaped India's rich textile-making heritage.
+                        </p>
+                    </div>
+
+                    <!-- Room 01 Main Carousel -->
+                    <div class="room-carousel-container">
+                        <div class="swiper room1-swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Object 1 -->
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20woman%20gining%20cotton.jpg" alt="Indian cotton-ginning painting, circa 1815–1820">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details">
+                                        <span class="specimen-tag">ART-01</span>
+                                        <h3>Spinning Tools and Spindles</h3>
+                                        <p>Ancient tools used for hand-spinning raw cotton fibres into fine thread, the foundational step of Indian textile artistry.</p>
+                                    </div>
+                                </div>
+                                <!-- Object 2 -->
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Painting%20of%20Bhagat%20Kabir%20weaving%20with%20two%20attendants%2C%20Mughal%20Empire%2C%20circa%20early%2018th%20century.jpg" alt="Early 18th-century Mughal painting of Bhagat Kabir weaving">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details">
+                                        <span class="specimen-tag">ART-02</span>
+                                        <h3>The Charkha</h3>
+                                        <p>The iconic spinning wheel that revolutionized textile production and later became a symbol of self-reliance.</p>
+                                    </div>
+                                </div>
+                                <!-- Object 3 -->
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="images/model-red-room-shelves.jpg" alt="Tools and objects in your textile manufacturing room">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details">
+                                        <span class="specimen-tag">ART-03</span>
+                                        <h3>Dyeing Equipment</h3>
+                                        <p>Traditional vats and organic pigments used to create the legendary vibrant madder reds and indigo blues.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Textile%20(India)%2C%2018th%20century%20(CH%2018424099).jpg" alt="18th-century Indian painted cotton textile with a floral diamond pattern" loading="lazy">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details">
+                                        <span class="specimen-tag">ART-04</span>
+                                        <h3>Painted Cotton Textile</h3>
+                                        <p>An 18th-century Indian cotton textile decorated with a detailed floral and geometric pattern.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Textile%20(India)%2C%20early%2018th%20century%20(CH%2018670625).jpg" alt="Early 18th-century Indian textile with floral and cord motifs" loading="lazy">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details">
+                                        <span class="specimen-tag">ART-05</span>
+                                        <h3>Floral Textile Design</h3>
+                                        <p>An early 18th-century textile showing the rich colours and repeating floral designs valued in Indian cotton cloth.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Textile%20(India)%2C%2018th%20century%20(CH%2018394405).jpg" alt="18th-century Indian embroidered textile fragment" loading="lazy">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details">
+                                        <span class="specimen-tag">ART-06</span>
+                                        <h3>Embroidered Textile</h3>
+                                        <p>An example of decorative textile work that brought fine surface detail to Indian fabrics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next custom-nav"></div>
+                            <div class="swiper-button-prev custom-nav"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- Room 1 Thumbs -->
+                        <div class="swiper room1-thumbs container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20woman%20gining%20cotton.jpg" alt="Indian cotton-ginning painting, circa 1815–1820"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Painting%20of%20Bhagat%20Kabir%20weaving%20with%20two%20attendants%2C%20Mughal%20Empire%2C%20circa%20early%2018th%20century.jpg" alt="Early 18th-century Mughal painting of Bhagat Kabir weaving"></div>
+                                <div class="swiper-slide thumb-slide"><img src="images/model-red-room-shelves.jpg" alt="Tools and objects in your textile manufacturing room"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Textile%20(India)%2C%2018th%20century%20(CH%2018424099).jpg" alt="18th-century Indian painted cotton textile with a floral diamond pattern" loading="lazy"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Textile%20(India)%2C%20early%2018th%20century%20(CH%2018670625).jpg" alt="Early 18th-century Indian textile with floral and cord motifs" loading="lazy"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Textile%20(India)%2C%2018th%20century%20(CH%2018394405).jpg" alt="18th-century Indian embroidered textile fragment" loading="lazy"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: ROOM 02 (Dark Theme) -->
+                <div class="tab-content dark-gallery" id="tab-2">
+                    <div class="container narrow">
+                        <span class="section-label inverse">ROOM 02</span>
+                        <h2 class="editorial-heading inverse">The Routes of Trade</h2>
+                        <p class="curatorial-wall-text inverse">
+                            The story of Indian textiles did not end at the loom. Across centuries, Indian fabrics and spices travelled through extensive networks of merchants, ports and markets. This room explores the commercial journey of these treasured commodities and India's place in historic global trade.
+                        </p>
+                    </div>
+
+                    <!-- Room 02 Main Carousel -->
+                    <div class="room-carousel-container">
+                        <div class="swiper room2-swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Trade Object 1 -->
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="images/model-trade-scales-detail.jpg" alt="Trade scales in your miniature exhibition">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details inverse">
+                                        <span class="specimen-tag">TRD-01</span>
+                                        <h3>Traditional Weighing Scale</h3>
+                                        <p>Precision instruments used by merchants to value textiles and spices against gold and local currency.</p>
+                                    </div>
+                                </div>
+                                <!-- Trade Object 2 -->
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ships%20in%20Bombay%20Harbour%2C%201731.jpg" alt="Ships in Bombay Harbour, circa 1731">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details inverse">
+                                        <span class="specimen-tag">TRD-02</span>
+                                        <h3>Packaged Textile Bundles</h3>
+                                        <p>How goods were meticulously wrapped and sealed for the long maritime journeys across the Indian Ocean.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/1717%20map-View%20of%20Surat%20by%20Herman%20Moll.jpg" alt="Herman Moll map showing Surat and the East Indies, 1717" loading="lazy">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details inverse">
+                                        <span class="specimen-tag">TRD-03</span>
+                                        <h3>Surat and the East Indies, 1717</h3>
+                                        <p>A period map showing Surat within the wider network of ports and trading routes across the East Indies.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dutch%20East%20India%20Company%27s%20warehouse%20and%20living%20quarters%20in%20Surat.jpg" alt="Dutch East India Company warehouse and living quarters in Surat" loading="lazy">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details inverse">
+                                        <span class="specimen-tag">TRD-04</span>
+                                        <h3>European Trading Factory</h3>
+                                        <p>A view of the Dutch trading establishment in Surat, where merchants stored goods and conducted business.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide object-slide">
+                                    <div class="object-image-container lightbox-trigger">
+                                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/De%20Hollandse%20loge%20op%20Surat%2C%201629%20Logie%20van%20Suratte.png" alt="Dutch trading lodge in Surat, 1629" loading="lazy">
+                                        <div class="hover-label">View Full Image</div>
+                                    </div>
+                                    <div class="object-details inverse">
+                                        <span class="specimen-tag">TRD-05</span>
+                                        <h3>Trading Lodge at Surat</h3>
+                                        <p>An early view of the Dutch trading lodge at Surat, illustrating the presence of European trading companies in India.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next custom-nav"></div>
+                            <div class="swiper-button-prev custom-nav"></div>
+                        </div>
+
+                        <!-- Room 2 Thumbs -->
+                        <div class="swiper room2-thumbs container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide thumb-slide"><img src="images/model-trade-scales-detail.jpg" alt="Trade scales in your miniature exhibition"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ships%20in%20Bombay%20Harbour%2C%201731.jpg" alt="Ships in Bombay Harbour, circa 1731"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/1717%20map-View%20of%20Surat%20by%20Herman%20Moll.jpg" alt="Herman Moll map showing Surat and the East Indies, 1717" loading="lazy"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dutch%20East%20India%20Company%27s%20warehouse%20and%20living%20quarters%20in%20Surat.jpg" alt="Dutch East India Company warehouse and living quarters in Surat" loading="lazy"></div>
+                                <div class="swiper-slide thumb-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/De%20Hollandse%20loge%20op%20Surat%2C%201629%20Logie%20van%20Suratte.png" alt="Dutch trading lodge in Surat, 1629" loading="lazy"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: STUDIO -->
+                <div class="tab-content" id="tab-3">
+                    <div class="container narrow studio-header">
+                        <span class="section-label">INTERACTIVE STUDIO</span>
+                        <h2 class="editorial-heading">Stamp Your Story</h2>
+                        <p>Create your own textile-inspired impression using traditional motifs and stamps.</p>
+                    </div>
+
+                    <div class="studio-wrapper container">
+                        <!-- Canvas Sidebar -->
+                        <div class="studio-controls">
+                            <div class="control-group">
+                                <label>Choose Motif</label>
+                                <div class="motif-selector">
+                                    <button class="motif-btn active" data-motif="paisley" title="Paisley Buta">
+                                        <svg viewBox="0 0 50 50"><path d="M25,45 C15,45 5,35 5,20 C5,10 15,5 25,5 C35,5 45,15 45,25 C45,35 35,45 25,45 Z" fill="currentColor"/></svg>
+                                    </button>
+                                    <button class="motif-btn" data-motif="lotus" title="Lotus Rosette">
+                                        <svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="15" fill="currentColor"/></svg>
+                                    </button>
+                                    <button class="motif-btn" data-motif="jaali" title="Geometric Jaali">
+                                        <svg viewBox="0 0 50 50"><rect x="15" y="15" width="20" height="20" fill="currentColor"/></svg>
+                                    </button>
+                                    <button class="motif-btn" data-motif="madder" title="Madder Floral">
+                                        <svg viewBox="0 0 50 50"><path d="M25,10 L30,25 L45,30 L30,35 L25,50 L20,35 L5,30 L20,25 Z" fill="currentColor"/></svg>
+                                    </button>
+                                    <button class="motif-btn" data-motif="compass" title="Maritime Compass">
+                                        <svg viewBox="0 0 50 50"><path d="M25,5 L25,45 M5,25 L45,25" stroke="currentColor" stroke-width="4"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label>Ink Color</label>
+                                <div class="color-selector">
+                                    <button class="color-btn active" data-color="#BC0202" style="background: #BC0202;"></button>
+                                    <button class="color-btn" data-color="#000000" style="background: #000000;"></button>
+                                </div>
+                            </div>
+                            <div class="control-group action-btns">
+                                <button id="clear-canvas" class="btn-secondary">Clear Canvas</button>
+                                <button id="download-canvas" class="btn-primary">Download Card</button>
+                            </div>
+                        </div>
+
+                        <!-- Main Canvas Area -->
+                        <div class="canvas-container">
+                            <canvas id="studio-canvas"></canvas>
+                            <div class="canvas-hint">Tap to stamp your motif</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Closing Section -->
+        <section class="closing-section container">
+            <h2 class="reveal-text">Every thread has a story.<br>Every exchange leaves a mark.</h2>
+            <p class="fade-up">A journey through India's rich textile heritage, craftsmanship and connections across the world.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-grid container">
+            <div class="footer-brand">
+                <h2>THREADS OF EXCHANGE</h2>
+                <p>CSMVS × THE BRITISH MUSEUM</p>
+                <div class="footer-credits">Academic Project | Communication Design</div>
+            </div>
+            <div class="footer-team">
+                <span class="team-label">THE TEAM</span>
+                <ul>
+                    <li>Aayushi Surve</li>
+                    <li>Aparna Karthikeyan</li>
+                    <li>Riddhi Parmar</li>
+                    <li>Sachi Mhatre</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Threads of Exchange. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox Image" id="lightbox-img">
+            <div class="lightbox-caption">
+                <span id="lb-tag">ART-01</span>
+                <h4 id="lb-title">Object Title</h4>
+            </div>
+        </div>
+        <button class="lb-prev">&larr;</button>
+        <button class="lb-next">&rarr;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
